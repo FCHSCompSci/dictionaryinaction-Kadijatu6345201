@@ -1,7 +1,7 @@
 import random
 
 game_stats = {
-    "level_up": 4,567,
+    "level_up": 4567,
     "kingdom_coins": 10000,
     }
 STATS = {
@@ -10,28 +10,20 @@ STATS = {
     "xp": 0,
     "Coins": 0,
     }
-monster = {
-    "Nyarlathotep" == {
-        "xp": 253,
-        "coins": 534, 
-        }
-    "Azathoth" == {
-        "xp": 523780,
-        "coins": 4367926289,
-        }
-    "Dagon" == {
-        "xp": 52,
-        "coins": 36
-        }
-    "Hastur" == {
-        "xp": 456
-        "coins": 154
-        
+monsters = {
+    "Nyarlathotep": "monster1",
+    "Azathoth": "monster2",
+    "Dagon": "monster3",
+    "Hastur": "monster4",
     }
+randmon = random.choice(list(monsters.keys()))
+
 player = input ("Welcome, Player, to Golden Castle. Before we begin, may I know what to call you?: ")
 
-print("Alright then, " + player + ". Currently, you are in the trial zone, outside the kingdom walls of Avaral. To get into the kingdom, you need to get 10,000 coins. You currently have no coins. you can check on your coins, xp, and level by typing STATS. To get more coins and xp, you need to fight the monsters in the forest around the perameter of the kingdom. Walk through the forest to come across random monsters. Each monster gives different amounts of coins and xp. Lets go find your first monster!")
+print("Alright then, " + player + ". Currently, you are in the trial zone, outside the kingdom walls of Avaral. To get into the kingdom, you need to get 10,000 coins. You currently have no coins. (You can check how many coins you have, along with how much xp you have, what level your at, and what weapon you have equipped, by typing STATS in all caps.) To get coins, you need to roam the forests outside of Avaral and fight random monsters you come across.")
+fight = input("Explor the forests of Avaral? [Y]es/[N]o: ")
 
-cmd = input("what is your command")
-if cmd != what i want them to do:
-    continue
+if fight == "Y":
+    print ("You walk through the forests and come across " +randmon+ ". You kill the Eldritch beast and gain coins and xp. Good job!")
+else:
+    print ("You can't get into the kingdom without money, so either stand outside those walls forever and starve to death, or get your lazy butt in that forest and slay some Eldritch beasts!")
