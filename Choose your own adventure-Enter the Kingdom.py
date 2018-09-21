@@ -1,29 +1,62 @@
 import random
+import time
 
 game_stats = {
-    "level_up": 4567,
-    "kingdom_coins": 10000,
-    }
+     "level_up": 35000,
+     "kingdom_coins": 10000,
+     }
 STATS = {
-    "Level": 1,
-    "Weapon": "knife",
-    "xp": 0,
-    "Coins": 0,
-    }
+     "Level": 1,
+     "Weapon": "Knife",
+     "xp": 0,
+     "coins": 0,
+     }
 monsters = {
-    "Nyarlathotep": "monster1",
-    "Azathoth": "monster2",
-    "Dagon": "monster3",
-    "Hastur": "monster4",
-    }
-randmon = random.choice(list(monsters.keys()))
+     "Nyarlathotep":"monster1",
+     "Azathoth": "monster2",
+     "Dagon": "monster3",
+     "Hastur": "monster4",
+     "Aiueb Gnshal": "monster5",
+     "C'thalpa": "monster6",
+     "Cxaxukluth": "monster7",
+     "Kaajh'Kaalbh": "monster8",
+     "Ycnàgnnisssz": "monster9",
+     }
 
-player = input ("Welcome, Player, to Golden Castle. Before we begin, may I know what to call you?: ")
 
-print("Alright then, " + player + ". Currently, you are in the trial zone, outside the kingdom walls of Avaral. To get into the kingdom, you need to get 10,000 coins. You currently have no coins. (You can check how many coins you have, along with how much xp you have, what level your at, and what weapon you have equipped, by typing STATS in all caps.) To get coins, you need to roam the forests outside of Avaral and fight random monsters you come across.")
-fight = input("Explor the forests of Avaral? [Y]es/[N]o: ")
+player = input("Welcome, player, to floating castle. Before we begin our journey, I need a name to call you by. Can't call you 'The Player' for the whole game."\
+               " Type in the name you'd like to go by: ")
+print("Alright then, " +player+ ". Your story begins just outside of the walls of the great city of Avaral. You came all the way from your home kingdom of Solvir to visit a friend of yours."\
+       " Anamore was her name, and she resided in the castle of the royal family, and as she is one of the best witches in the country, acted as the head of magical research. You hadn't seen her"\
+       " in quiet a bit of time, and had decided to come for a visit. When you came to the large gates of the kingdom, however, you found yourself faced with an entry fee of 10,000 coins that"\
+       " didn't exist last time you visited. You unfortunately had used up all of your money on resources on your way here, so you had 0 coins on your person. to check how many coins you have at"\
+       " any given momnet, along with how much xp, what weapon you have equipped, and what level your on, simply type STATS in all caps. Go ahead and give it a try.")
 
-if fight == "Y":
-    print ("You walk through the forests and come across " +randmon+ ". You kill the Eldritch beast and gain coins and xp. Good job!")
-else:
-    print ("You can't get into the kingdom without money, so either stand outside those walls forever and starve to death, or get your lazy butt in that forest and slay some Eldritch beasts!")
+while True:
+    stat = input("Type STATS: ")
+    if stat == "STATS":
+        print ("Great! Like knowing that your currently weaker then the weakest eldritch beast?")
+        break
+    else:
+        print ("I'm not letting you leave until you check your stats")
+
+
+
+
+print("Moving on, you heard through the grapevine that monsters"\
+       " in the forests surounding Avaral drop coins when you fought them.")
+
+time.sleep(2)
+
+while True:
+    monfight = random.choice(list(monsters.keys()))
+    fight = input("Explore the forests of Avaral? [Y]es/[N]o: ")
+    if fight == "y":
+        print ("You walk through the forests and come across " +monfight+ ". You kill the Eldritch beast and gain coins and xp. Good job!")
+    else:
+        print ("You can't get into the kingdom without money, so either stand outside those walls forever and starve to death, or get your lazy butt in that forest and slay some Eldritch beasts!")
+
+
+
+
+
