@@ -52,11 +52,24 @@ while True:
     monfight = random.choice(list(monsters.keys()))
     fight = input("Explore the forests of Avaral? [Y]es/[N]o: ")
     if fight == "y":
-        print ("You walk through the forests and come across " +monfight+ ". You kill the Eldritch beast and gain coins and xp. Good job!")
-    else:
+       STATS["xp"] = STATS["xp"] + random.choice(range(500,1000))
+       STATS["coins"] = STATS["coins"] + random.choice(range(100,500))
+       print ("You walk through the forests and come across " +monfight+ ". You kill the Eldritch beast and gain coins and xp. you now have " +str(STATS["coins"])+ \
+              " coins and " +str(STATS["xp"])+ " xp. Good job!")
+       else:
         print ("You can't get into the kingdom without money, so either stand outside those walls forever and starve to death, or get your lazy butt in that forest and slay some Eldritch beasts!")
 
+  if STATS["xp"] == game_stats["level_up"]:
+STATS["Level"] = STATS["Level"] + 1
+    print("You went up one level! Your doing great sweety~")
+else:
+   print("Nothing happened. Your close though!")
+
+if STATS["coins"] == game_stats["kingdom_coins"]:
+    print("You have enough coins to get into the kingdom now! You can keep grinding for coins and xp t be able to level up and buy stuff in the kingdom market." \
+          " Whenever your ready to head into the kingdom, type ENTER KINGDOM in all caps. You can come back to grind at any time.")      
+else:
+   print("keep going, you still need more coins to enter the kingdom")
 
 
-
-
+#need to add that last section to the while loop
